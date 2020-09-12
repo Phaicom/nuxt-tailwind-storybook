@@ -1,36 +1,31 @@
 const path = require('path')
 
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          // Loader for webpack to process CSS with PostCSS
-          {
-            loader: 'postcss-loader',
-            options: {
-              /* 
-                Enable Source Maps
-               */
-              sourceMap: true,
-              /*
-                Set postcss.config.js config path && ctx 
-               */
-              config: {
-                path: './.storybook/',
-              },
-            },
-          },
-        ],
+module.exports = ({ config }) => {
+  config.resolve.extensions.push('.js', '.vue', '.css', '.html')
 
-        include: path.resolve(__dirname, '../'),
+  config.resolve.alias = {
+    ...config.resolve.alias,
+    '@': path.resolve(__dirname, '../'),
+    '~': path.resolve(__dirname, '../'),
+  }
+
+  config.module.rules.push({
+    test: /\.css$/,
+    exclude: /node_modules/,
+    use: [
+      {
+        loader: 'postcss-loader',
+        options: {
+          sourceMap: true,
+          config: {
+            path: './.storybook/',
+          },
+        },
       },
     ],
-  },
-  resolve: {
-    alias: {
-      '@': path.dirname(path.resolve(__dirname)),
-    },
-  },
+
+    include: path.resolve(__dirname, '../'),
+  })
+
+  return config
 }

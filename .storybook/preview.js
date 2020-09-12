@@ -1,7 +1,10 @@
 import { configure, addParameters } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 import Vue from 'vue'
+import Vuex from 'vuex'
 import '@/assets/css/tailwind.css'
+
+Vue.use(Vuex)
 
 const customViewports = {
   Mobile: {
@@ -60,9 +63,9 @@ Vue.component('nuxt-link', {
   template: '<a href="#" @click.prevent="log()"><slot>NuxtLink</slot></a>',
 })
 
-// function loadStories() {
-//   const req = require.context('../components', true, /\.stories\.js$/)
-//   req.keys().forEach((filename) => req(filename))
-// }
+function loadStories() {
+  const req = require.context('../components', true, /\.stories\.js$/)
+  req.keys().forEach((filename) => req(filename))
+}
 
-// configure(loadStories, module)
+configure(loadStories, module)

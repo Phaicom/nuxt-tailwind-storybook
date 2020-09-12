@@ -1,20 +1,48 @@
 # nuxt-tailwind-storybook
 
-## Build Setup
+## Prerequisites
 
-```bash
-# install dependencies
-$ yarn install
+- [Nodejs](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/)
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+## Built with
 
-# build for production and launch server
-$ yarn build
-$ yarn start
+- [Nuxtjs](https://nuxtjs.org/guide/)
+- [Storybook](https://storybook.js.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-# generate static project
-$ yarn generate
+## Installing
+
+1. Nuxtjs
+
+- install dependencies
+
+```
+$ yarn
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+- start development
+
+```
+$ yarn dev
+```
+
+2. storybook
+
+- start storybook
+
+```
+$ yarn storybook
+```
+
+## Demo
+
+-
+
+## Author
+
+By [Reawpai Chunsoi](https://github.com/phaicom/)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

@@ -1,3 +1,12 @@
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/fillgoods-test/',
+        },
+      }
+    : {}
+
 export default {
   /*
    ** Nuxt rendering mode
@@ -9,6 +18,8 @@ export default {
    ** See https://nuxtjs.org/api/configuration-target
    */
   target: 'server',
+  
+  ...routerBase,
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head

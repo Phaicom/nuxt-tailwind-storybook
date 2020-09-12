@@ -3,7 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">
-        portfolio2
+        nuxt-tailwind-storybook
       </h1>
       <div class="links">
         <a
